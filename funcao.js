@@ -1,3 +1,5 @@
+const prompt = require("prompt-sync")({ sigint: true });
+
 let atividades = [];
 
 function incluir(dia, atividade){
@@ -7,7 +9,8 @@ function incluir(dia, atividade){
 
 function menu(){
     while (true) {
-        console.log('Programa de férias. O que deseja fazer? 1.Incluir 2.Editar 3.Listar 4.Deletar 5.Sair')
+        console.log('Programa de férias! O que deseja fazer?\n1.Incluir\n2.Editar\n3.Listar\n4.Deletar\n5.Sair');
+        break;
     }
     let resposta = prompt (`Escolha uma opção: `)
     resposta = parseInt(resposta);
@@ -37,8 +40,5 @@ function sair(){
     process.exit();
     console.log('Até mais!');
 }
-
-
-
 
 module.exports = {menu, incluir, listar, deletar, sair, editar};
